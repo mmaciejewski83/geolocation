@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace Geolocation.Core.Domain
+namespace Geolocation.Application.CQRS
 {
-    public class GeolocationData
+    public class CreateLocation : ICommand
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; init; } = Guid.NewGuid();
         public string Ip { get; set; }
         public int Port { get; set; }
         public string Type { get; set; }

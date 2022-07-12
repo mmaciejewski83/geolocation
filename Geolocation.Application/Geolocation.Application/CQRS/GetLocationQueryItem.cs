@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Geolocation.Core.Domain
+namespace Geolocation.Application.CQRS
 {
-    public class GeolocationData
+    public class GetLocationQueryItem
     {
         public Guid Id { get; set; }
         public string Ip { get; set; }
