@@ -9,5 +9,6 @@ namespace Geolocation.Core.Repository
         Task AddAsync(Domain.GeolocationData location);
         Task<List<Domain.GeolocationData>> GetAllAsync();
         Task DeleteAsync(Guid locationId);
+        Task<bool> ExistsAsync(Guid locationId);
     }
 }

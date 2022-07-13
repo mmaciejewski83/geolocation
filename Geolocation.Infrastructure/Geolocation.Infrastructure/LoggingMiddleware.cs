@@ -19,12 +19,12 @@ namespace Geolocation.Infrastructure
 
         public async Task Invoke(HttpContext context)
         {
-            var request = await FormatRequest(context.Request);
+            var request = FormatRequest(context.Request);
             _logger.LogInformation(request);
             await _next(context);
         }
 
-        private async Task<string> FormatRequest(HttpRequest request)
+        private string FormatRequest(HttpRequest request)
         {
             return $"{request.Scheme} {request.Host}{request.Path} {request.QueryString}";
         }

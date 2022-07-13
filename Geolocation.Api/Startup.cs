@@ -40,6 +40,7 @@ namespace Geolocation
             app.UseExceptionMiddleware();
             app.UseLoggingMiddleware();
             app.UseRouting();
+            app.UseInfrastructure();
 
             app.UseEndpoints(endpoints =>
             {

@@ -33,6 +33,12 @@ namespace Geolocation.Infrastructure
             return Task.CompletedTask;
         }
 
+        public Task<bool> ExistsAsync(Guid locationId)
+        {
+            var entity = _data.FirstOrDefault(x => x.Id == locationId);
+            return Task.FromResult(entity != null);
+        }
+
         public Task<List<GeolocationData>> GetAllAsync()
         {
             return Task.FromResult(_data);
